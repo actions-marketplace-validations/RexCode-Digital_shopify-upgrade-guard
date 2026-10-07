@@ -67,7 +67,7 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
 
-      - uses: RexCode-Digital/shopify-upgrade-guard@223ec33e119f920ecc9f9a5df722a2f6fda0df40 # v0.2.5
+      - uses: RexCode-Digital/shopify-upgrade-guard@b0a6816f95d783f703bf031c9920004fbb865bc1 # v0.2.6
         with:
           target: 2026-10
           fail-on: warning
@@ -227,10 +227,10 @@ MIT — see [LICENSE](LICENSE).
 
 ## Immutable SHA usage
 
-The Action example pins the reviewed v0.2.3 release commit. Verify the release reference with:
+The Action example pins the reviewed v0.2.6 release commit. Verify the release reference with:
 
 ```bash
-gh api repos/RexCode-Digital/shopify-upgrade-guard/git/ref/tags/v0.2.5 --jq .object.sha
+git fetch --tags origin && git rev-parse 'v0.2.6^{commit}'
 ```
 
 Published patch tags and existing minor aliases are retained. Future releases do not move minor aliases; use an immutable patch tag or a reviewed full commit SHA.
